@@ -1,0 +1,9 @@
+{
+    "files": [
+        { "name": "Javascript 학습노트", "path": "md_folder/md1.md" },
+        { "name": "Electron 학습노트", "path": "md_folder/md2.md" },
+        { "name": "실습 프로젝트 10월", "path": "md_folder/readme1.md" },
+        { "name": "실습 프로젝트 11월", "path": "md_folder/readme2.md" },
+        { "name": "실습 프로젝트 12월", "path": "md_folder/readme3.md" }
+    ]
+}

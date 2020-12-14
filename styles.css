@@ -1,58 +1,55 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 html body img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 body {
-    background-color: #fafafa;
-    margin: 0px;
+  background-color: #fafafa;
+  margin: 0px;
 }
-.sidebar ul {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    cursor: pointer;
-}
+
 .page-wrapper {
-    padding: 20px;
-    min-height: 100vh;
-    max-height: 100vh;
-    display: flex;
+  padding: 20px;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
 }
 .wrapper {
-    flex: 1;
-    overflow: hidden;
+  flex: 1;
+  overflow: hidden;
 }
 
 .header {
-    overflow: hidden;
-    height: 120px;
-    margin-bottom: -120px;
+  overflow: hidden;
+  height: 160px;
+  margin-bottom: -160px;
 }
 
 .main {
-    padding-top: 120px;
-    display: flex;
-    height: 100%;
+  padding-top: 160px;
+  display: flex;
+  height: 100%;
 }
 
 .sidebar {
-    border: 1px solid #dddddd;
-    width: 180px;
+  border: 1px solid #dddddd;
+  width: 180px;
 }
 
-.sidebar li:hover {
-    background-color: aqua;
+.sidebar > div:hover {
+  background-color: aqua;
+  cursor: pointer;
+  padding-left: 5px;
 }
 
 .right {
-    border: 1px solid #dddddd;
-    width: calc(100% - 180px);
+  border: 1px solid #dddddd;
+  width: calc(100% - 180px);
 }
 .right-content {
-    overflow: auto;
-    height: 100%;
-    padding: 0px 10px;
+  overflow: auto;
+  height: 100%;
+  padding: 0px 10px;
 }

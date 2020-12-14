@@ -1,12 +1,11 @@
 (function() {
-  const $preview = $(".right-content");
-  const $selected = $(".select");
-
-  const config = {
-    jsonfile: "md-files.json",
-    files: [],
-    currentFile: 0
-  };
+  const $preview = $(".right-content"),
+    $selected = $(".select"),
+    $sidebar = $(".sidebar"),
+    config = {
+      jsonfile: "md-files.json",
+      files: []
+    };
 
   init();
 
@@ -14,7 +13,7 @@
     getJson(config.jsonfile);
 
     // 이벤트 등록
-    document.querySelector(".sidebar").addEventListener("click", selectFile);
+    $sidebar.on("click", selectFile);
   }
 
   function getJson(jsonfile) {
@@ -22,20 +21,21 @@
       .then(res => res.json())
       .then(jsonContent => fillList(jsonContent))
       .catch(function(err) {
-        preview.innerHTML = `<h2>Something went wrong with '${jsonfile}:<br>${err}'</h2>`;
+        $preview.html(
+          `<h2>Something went wrong with '${jsonfile}:<br>${err}'</h2>`
+        );
       });
   }
 
   function fillList(data) {
     config.files = data.files;
-    const filesContainer = document.querySelector(".sidebar");
 
     data.files.forEach(file => {
       let div = document.createElement("div");
       div.setAttribute("data-file", file.path);
       div.className = "md-file";
       div.innerText = `${file.name}`;
-      filesContainer.appendChild(div);
+      $sidebar.append(div);
     });
   }
 
@@ -47,14 +47,12 @@
   }
 
   function transformFile(file, data) {
-    // Transform md → html
+    // md → html 변환
     let md = new markdownit();
     $preview.html(md.render(data));
 
     // Store current status
     $selected.text(`Selected Now → ${file}`);
-    localStorage["lastOpened"] = file;
-    config.currentFile = config.files.indexOf(file);
   }
 
   function getFile(file, callback) {
